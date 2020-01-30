@@ -1,0 +1,61 @@
+<button class="btn btn-dark mb-3" (click)="showForm = !showForm">Add User</button>
+<div class="card card-body mb-3" *ngIf="showForm">
+  <form #userFrom="ngForm" (ngSubmit)="onSubmit(userFrom)">
+    <div class="from-group mb-3">
+      <label>First Name</label>
+      <input type="text" class="form-control" name="firstName"
+      [(ngModel)]="user.firstName"  
+      [ngClass]="{'is-invalid':userFirstName.errors && userFirstName.touched}"
+        #userFirstName="ngModel"
+        required
+        minlength="2"
+      >
+      <div [hidden]="!userFirstName.errors?.required" class="invalid-feedback">First name is required.</div>
+      <div [hidden]="!userFirstName.touched" class="invalid-feedback">Minimum 2 charhcates is required.</div>
+    </div>
+    <label>Last Name</label>
+    <div class="from-group mb-3">
+      <input type="text" class="form-control" name="lastName"
+      [(ngModel)]="user.lastName"  
+      [ngClass]="{'is-invalid':userLastName.errors && userLastName.touched}"
+        #userLastName="ngModel"
+        required
+        minlength="2"
+      >
+      <div [hidden]="!userLastName.errors?.required" class="invalid-feedback">Last name is required.</div>
+      <div [hidden]="!userLastName.touched" class="invalid-feedback">Minimum 2 charhcates is required.</div>
+    </div>
+    <label>Email</label>
+    <div class="from-group mb-3">
+      <input type="text" class="form-control" name="email"
+      [(ngModel)]="user.email"  
+      [ngClass]="{'is-invalid':userEmail.errors && userEmail.touched}"
+        #userEmail="ngModel"
+        required
+        pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+      >
+      <div [hidden]="!userEmail.errors?.required" class="invalid-feedback">Email is required.</div>
+      <div [hidden]="!userEmail.touched" class="invalid-feedback">Email is invalid.</div>
+    </div>
+    <button [disabled]="!userFrom.form.valid"  class="btn btn-light btn-block">Add New User</button>
+  </form>
+</div>
+<h2>User</h2>
+<ul class="list-unstyled">
+  <li class="card card-body mb-3"  *ngFor="let user of users">    
+    <div class="">
+      <h3>{{user.firstName}} {{user.lastName}} 
+          <small> 
+            <button (click)="user.isHide=!user.isHide" class="btn btn-dark">
+                <i [ngClass]="user.isHide ?'fa fa-plus' : 'fa fa-minus'"></i>
+            </button>
+          </small>
+        </h3>
+      <ul class="list-group" *ngIf="!user.isHide">
+        <li class="list-group-item">Email: {{user.email}}</li>
+        
+      </ul>
+    </div>
+  </li>
+</ul>
+
