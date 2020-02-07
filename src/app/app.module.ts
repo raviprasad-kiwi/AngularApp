@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserComponent } from './components/user/user.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
 import { DataService } from './services/data.service';
 import { PostComponent } from './components/post/post.component';
@@ -19,6 +19,9 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GoogleChartsModule } from 'angular-google-charts';
 import { MembersComponent } from './components/members/members.component';
+import { LoginComponent } from './login/login.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,8 @@ import { MembersComponent } from './components/members/members.component';
     HomeComponent,
     NotfoundComponent,
     FooterComponent,
-    MembersComponent
+    MembersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +42,10 @@ import { MembersComponent } from './components/members/members.component';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
-  providers: [UserService,DataService, PostService],
+  providers: [UserService,DataService, PostService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

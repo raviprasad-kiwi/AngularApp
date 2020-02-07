@@ -15,6 +15,16 @@
         <li class="nav-item">
           <a routerLink="members" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Members</a>
         </li>
+
+        <li class="nav-item">
+          <a routerLink="users" class="nav-link" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="posts" class="nav-link" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="members" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
