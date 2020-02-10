@@ -1,0 +1,77 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-7">
+<div class="card">
+    <div class="card-header">
+        <h3>Registration Form</h3>
+    </div>
+    <div class="card-body">    
+	<div class="row justify-content-md-center">
+				<form [formGroup]="formr" (ngSubmit)="register()">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>First Name</label>
+								<input type="text" placeholder="Enter First Name Here.." class="form-control">
+							</div>
+							<div class="col-sm-6 form-group">
+								<label>Last Name</label>
+								<input type="text" placeholder="Enter Last Name Here.." class="form-control">
+							</div>
+						</div>					
+						<div class="form-group">
+							<label>Address</label>
+							<textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea>
+						</div>	
+						<div class="row">
+							<div class="col-sm-4 form-group">
+								<label>City</label>
+								<input type="text" placeholder="Enter City Name Here.." class="form-control">
+							</div>	
+							<div class="col-sm-4 form-group">
+								<label>State</label>
+								<input type="text" placeholder="Enter State Name Here.." class="form-control">
+							</div>	
+							<div class="col-sm-4 form-group">
+								<label>Zip</label>
+								<input type="text" placeholder="Enter Zip Code Here.." class="form-control">
+							</div>		
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Title</label>
+								<input type="text" placeholder="Enter Designation Here.." class="form-control">
+							</div>		
+							<div class="col-sm-6 form-group">
+								<label>Company</label>
+								<input type="text" placeholder="Enter Company Name Here.." class="form-control">
+							</div>	
+                        </div>
+
+                        <div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Phone Number</label>
+						        <input type="text" placeholder="Enter Phone Number Here.." class="form-control">
+							</div>		
+							<div class="col-sm-6 form-group">
+								<label>Email Address</label>
+						        <input type="email" placeholder="Enter Email Address Here.." formControlName="email" class="form-control">
+                            </div>                            
+                        </div>
+                        <div class="row">
+							<div class="col-sm-6 form-group">
+								<label>Password</label>
+						        <input type="password" placeholder="Enter Phone Number Here.." formControlName="password" class="form-control">
+							</div>		
+							<div class="col-sm-6 form-group">
+								<label>Confrim Password</label>
+						        <input type="password" placeholder="Enter Email Address Here.." formControlName="password" class="form-control">
+                            </div>                            
+						</div>
+					<button type="submit" class="btn btn-lg btn-success btn-block">Submit</button>					
+					</div>
+				</form> 
+				</div>
+	</div>
+    </div>
+</div>
+</div>

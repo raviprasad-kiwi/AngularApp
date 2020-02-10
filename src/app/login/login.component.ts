@@ -10,9 +10,9 @@ import { AuthService } from '../services/auth.service';
 })
 export class LoginComponent implements OnInit {
   form;
-  constructor(private fb: FormBuilder,
-    private myRoute: Router,
-    private auth: AuthService) {
+  msg;
+  isValid = false;
+  constructor(private fb: FormBuilder,  private myRoute: Router,  private auth: AuthService) {
     this.form = fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -23,8 +23,17 @@ export class LoginComponent implements OnInit {
   }
   login() {
     if (this.form.valid) {
-      this.auth.sendToken(this.form.value.email)
-      this.myRoute.navigate(["home"]);
+      if(this.auth.isLoggedIn()) {
+        this.myRoute.navigate(["/"]);
+      }
+      else {
+        this.isValid = false;
+        this.msg ="Wrong Username & Password!" ;   
+      }
+    }
+    else {
+      this.isValid = false;
+      this.msg ="Invalid Username & Password!";
     }
   }
 }

@@ -8,15 +8,16 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { MembersComponent } from './components/members/members.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full' , canActivate: [AuthGuard]},
-  {path: 'home', component: HomeComponent},
-  {path: 'users', component: UserComponent},
-  {path: 'posts', component: PostComponent},
-  {path: 'members', component: MembersComponent},
+  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  {path: 'users', component: UserComponent, canActivate: [AuthGuard]},
+  {path: 'posts', component: PostComponent, canActivate: [AuthGuard]},
+  {path: 'members', component: MembersComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent},
-  { path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
+  { path: 'register', component: RegisterComponent},
   {path: '**', component: NotfoundComponent}
 ];
 

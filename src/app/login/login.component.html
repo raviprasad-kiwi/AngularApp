@@ -1,9 +1,31 @@
-<form [formGroup]="form" (ngSubmit)="login()">
-  <div>
-  <input  type="email" placeholder="Email" formControlName="email" />
+
+  <div class="row justify-content-md-center">
+  <div class="col-md-7">
+      <div class="card">
+        <div class="card-header">
+          <h3>Please sign in</h3>
+       </div>
+        <div class="card-body">
+          <div class="card-body" *ngIf="isValid">{{msg}}</div>
+          <form accept-charset="UTF-8" [formGroup]="form" (ngSubmit)="login()">
+          <fieldset>
+              <div class="form-group">
+              <input class="form-control" placeholder="E-mail" formControlName="email" name="email" type="text" value="">
+            </div>
+            <div class="form-group">
+              <input class="form-control" placeholder="Password" formControlName="password"  name="password" type="password" value="">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input name="remember" type="checkbox" value="Remember Me"> Remember Me
+              </label>
+              </div>
+            <input class="btn btn-lg btn-success btn-block" type="submit" value="Log In">
+          </fieldset>
+          </form>
+        </div>
+    </div>
   </div>
-  <div>
-  <input  type="password" placeholder="Password" formControlName="password" />
-  </div>
-  <button type="submit" color="primary">Login</button>
-</form>
+</div>
+
+
