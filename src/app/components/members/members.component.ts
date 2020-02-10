@@ -45,7 +45,7 @@ export class MembersComponent implements OnInit {
   // tslint:disable-next-line:use-lifecycle-interface
   ngAfterViewChecked() {
 
-     const spanElements = document.getElementsByClassName('google-visualization-orgchart-node');
+     const spanElements = document.getElementsByClassName('google-visualization-orgchart-node')as HTMLCollectionOf<HTMLElement>;
 
       // tslint:disable-next-line:prefer-for-of
      for (let i = 0; i < spanElements.length; i++) {
