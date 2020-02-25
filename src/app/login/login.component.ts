@@ -23,17 +23,15 @@ export class LoginComponent implements OnInit {
   }
   login() {
     if (this.form.valid) {
-      if(this.auth.isLoggedIn()) {
-        this.myRoute.navigate(["/"]);
-      }
-      else {
+      if (this.auth.isLoggedIn()) {
+        this.myRoute.navigate(['/']);
+      } else {
         this.isValid = false;
-        this.msg ="Wrong Username & Password!" ;   
+        this.msg = 'Wrong Username & Password!' ;
       }
-    }
-    else {
+    } else {
       this.isValid = false;
-      this.msg ="Invalid Username & Password!";
+      this.msg = 'Invalid Username & Password!';
     }
   }
 }
