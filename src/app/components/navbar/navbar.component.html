@@ -1,10 +1,10 @@
-<nav class="navbar-dark navbar navbar-expand-lg bg-primary mb-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
   <div class="container">
-    <a class="navbar-brand" routerLink="/"><span class="display-4">BEDU</span><small>The Era Of Developing Uttrakhand</small></a>
-    <button class="navbar-toggler" type="button"  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
-      
+    <a class="navbar-brand" routerLink="/"><span class="display-4"><i class="fa fa-globe" aria-hidden="true"></i>BEDU</span></a>
+    <button class="navbar-toggler" (click)="updateClasses($event)" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent">
+      <span class="navbar-toggler-icon"></span>
     </button>
-    <div  id="navbarSupportedContent">
+    <div class="collapse navbar-collapse" [class.show]="isShown" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a routerLink="/" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a>
@@ -16,7 +16,10 @@
           <a routerLink="posts" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Posts</a>
         </li>
         <li class="nav-item">
-          <a routerLink="members" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Members</a>
+          <a routerLink="members" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Members</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="contactus" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Contact</a>
         </li>
         <li class="nav-item">
           <a routerLink="register" class="nav-link" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Register</a>
@@ -27,6 +30,7 @@
         <li class="nav-item">
           <a routerLink="logout" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Logout</a>
         </li>
+        
       </ul>
     </div>
   </div>

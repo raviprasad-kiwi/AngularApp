@@ -7,10 +7,16 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  isShown: any = false;
   constructor(public auth: AuthService) { }
 
   ngOnInit() {
   }
-
+  updateClasses(event) {
+    if (!this.isShown) {
+      this.isShown = true;
+    } else {
+      this.isShown = false;
+    }
+  }
 }

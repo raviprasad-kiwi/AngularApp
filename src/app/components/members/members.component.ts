@@ -26,10 +26,12 @@ export class MembersComponent implements OnInit {
    this.data = [
       // tslint:disable-next-line:max-line-length
       [{v: 'Hari Kapruwan', f: 'Hari Kapruwan<div style="color:red; font-style:italic">President</div><small>Address: Bijni D.Dun</small>'}, '', 'The President'],
-      [{v: 'Ravi Kapruwan', f: 'Ravi Kapruwan<div style="color:red; font-style:italic;">Vice President</div>'}, 'Hari Kapruwan', 'VP'],
+      [{v: 'Ravi Prasad', f: 'Ravi Prasad<div style="color:red; font-style:italic;">Vice-President</div>'}, 'Hari Kapruwan', 'VP'],
+      // tslint:disable-next-line:max-line-length
+      [{v: 'Rameshwar Prasad', f: 'Rameshwar Prasad<div style="color:red; font-style:italic;">Vice-President</div>'}, 'Hari Kapruwan', 'VP'],
       ['Member2', 'Hari Kapruwan', ''],
-      ['Member3', 'Ravi Kapruwan', 'Bob Sponge'],
-      ['Member4', 'Ravi Kapruwan', ''],
+      ['Member3', 'Ravi Prasad', 'Bob Sponge'],
+      ['Member4', 'Rameshwar Prasad', ''],
       ['Member5', 'Member2', 'Bob Sponge'],
       ['Member6', 'Member4', 'Unknow'],
       ['Member7', 'Member5', 'Bob Sponge'],
