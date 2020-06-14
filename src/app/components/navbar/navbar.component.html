@@ -6,7 +6,7 @@
           <!-- social icon-->
           <div class="col-sm-12">
             <ul class="social-network">
-              <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="waves-effect waves-dark" href="https://www.facebook.com/BEDU-The-Mission-Private-Lmited-103241294763291/" target="_blank"><i class="fa fa-facebook"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-linkedin"></i></a></li>
               <li><a class="waves-effect waves-dark" href="#"><i class="fa fa-pinterest"></i></a></li>
@@ -33,27 +33,14 @@
           <a routerLink="/" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/users" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Users</a>
+          <a routerLink="/about" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">About Us</a>
         </li>
         <li class="nav-item">
-          <a routerLink="/posts" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Posts</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/members" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Members</a>
+          <a routerLink="/gallery" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Gallery</a>
         </li>
         <li class="nav-item">
           <a routerLink="/contactus" class="nav-link" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Contact</a>
         </li>
-        <li class="nav-item">
-          <a routerLink="/register" class="nav-link" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Register</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="/login" class="nav-link" *ngIf="!auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Login</a>
-        </li>
-        <li class="nav-item">
-          <a routerLink="logout" class="nav-link" *ngIf="auth.isLoggedIn()" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Logout</a>
-        </li>
-        
       </ul>
     </div>
   </div>

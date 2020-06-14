@@ -10,10 +10,14 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
+import { AboutComponent } from './components/about/about.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'gallery', component: GalleryComponent},
   {path: 'users', component: UserComponent, canActivate: [AuthGuard]},
   {path: 'posts', component: PostComponent, canActivate: [AuthGuard]},
   {path: 'members', component: MembersComponent},

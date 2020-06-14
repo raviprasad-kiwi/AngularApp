@@ -24,7 +24,9 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './auth.guard';
 import { RegisterComponent } from './register/register.component';
 import { ContactComponent } from './contact/contact.component';
-
+import { AboutComponent } from './components/about/about.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,9 @@ import { ContactComponent } from './contact/contact.component';
     MembersComponent,
     LoginComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,8 @@ import { ContactComponent } from './contact/contact.component';
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgImageSliderModule
   ],
   providers: [UserService, DataService, PostService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
