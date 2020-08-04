@@ -8,15 +8,15 @@ import { Observable, of } from 'rxjs';
 export class UserService {
   data: Observable<any>;
   users: User[];
-  constructor() { 
-    this.users=[
-      {firstName:'Rahul', lastName:'Dravid', email:"rahul@gmail.com", isHide:true},
-      {firstName:'Robin', lastName:'Singh', email:"robin@yopmail.com", isHide:false}];
+  constructor() {
+    this.users = [
+      {firstName: 'Rahul', lastName: 'Dravid', email: 'rahul@gmail.com', isHide: true},
+      {firstName: 'Robin', lastName: 'Singh', email: 'robin@yopmail.com', isHide: false}];
   }
-  getUser(): Observable<User[]>{    
+  getUser(): Observable<User[]> {
     return of(this.users);
   }
-  addUser(user: User){
+  addUser(user: User) {
     this.users.unshift(user);
   }
 }
